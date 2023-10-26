@@ -1,8 +1,18 @@
-const Layout = ({ children }) => {
+import Head from 'next/head';
+import Header from './header';
+import Footer from './footer';
+
+const Layout = ({ children, title = '', description = '' }) => {
   return (
     <>
-      <h1>Desde Layout</h1>
+      <Head>
+        <title>{`GuitarLA - ${title}`}</title>
+        <meta name="description" content={description} />
+      </Head>
+
+      <Header />
       {children}
+      <Footer />
     </>
   );
 };
