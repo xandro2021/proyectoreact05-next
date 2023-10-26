@@ -7,6 +7,7 @@ const Header = () => {
   // Usado para resaltar en el navbar la ruta en la que nos encontramos
   const router = useRouter();
 
+  // Los Links no pueden tener clase, por lo que para asignarles clase se les agrega el comoponente a como hijos
   return (
     <header className={styles.header}>
       <div className={`contenedor ${styles.barra}`}>
