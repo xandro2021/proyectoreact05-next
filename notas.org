@@ -2,6 +2,7 @@
 
 * Consumir API con Next
 ** Server Side
+Las funciones correspondientes solo funcionan dentro la carpeta de pages. No sirven dentro de components
 *** Individual
 **** getServerSideProps
 + Los datos se obtienen en cada request (Server Side Rendering - SSR)
