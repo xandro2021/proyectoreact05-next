@@ -11,6 +11,24 @@ Las funciones correspondientes solo funcionan dentro la carpeta de pages. No sir
 **** getStaticProps
 + Obtener los datos cuando se crea el build (Static Site Generation - SSG)
 + Se utiliza cuando la informacion no cambia en cada request: Pagina informativa, documentacion, tramites, anuncios
+#+begin_src js
+// Hay que hacer un build cada vez que se actualice las guitarras
+// Primero se ejecuta la parte del servidor y luego la del cliente
+export async function getStaticProps() {
+  // Server Side Fetch
+  const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`);
+  const { data: guitarras } = await respuesta.json();
+
+  // Esto es lo que siempre debe de contener esta funcion. Esto hace que guitarras este disponible en funcion Tienda
+  return {
+    props: {
+      guitarras
+    }
+  }
+}
+
+export default Tienda;
+#+end_src
 **** getStaticPaths
 Obtener el listado de paginas que se van a crear cuando se realiza el build (Static Site Generation)
 ** Client Side
