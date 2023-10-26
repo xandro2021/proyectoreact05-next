@@ -1,0 +1,16 @@
+#+title: Notas
+
+* Consumir API con Next
+** Server Side
+*** Individual
+**** getServerSideProps
++ Los datos se obtienen en cada request (Server Side Rendering - SSR)
++ Se utiliza cuando la informacion cambia de forma continua en cada request o donde la pagina se actualiza cada poco tiempo
+*** En Conjunto
+**** getStaticProps
++ Obtener los datos cuando se crea el build (Static Site Generation - SSG)
++ Se utiliza cuando la informacion no cambia en cada request: Pagina informativa, documentacion, tramites, anuncios
+**** getStaticPaths
+Obtener el listado de paginas que se van a crear cuando se realiza el build (Static Site Generation)
+** Client Side
+useEffect con fetch o SWR (Libreria para usar axios)
