@@ -49,3 +49,21 @@ const nextConfig = {
 
 module.exports = nextConfig
 #+end_src
+
+* Routing Dinamico
+Al igual que en el Remix se crea la carpeta guitarras y a dentro se agrega un archivo con nombre entre corchetes [url].js
+De manera que al entrar a la direccion /guitarras/nombreDinamico se renderice el archivo [url]. Se puede usar useRouter para leer el nombreDinamico de la guitarra que se esta viendo. El objeto que retorna el useRouter contiene una propiedad llamada query la cual tendra como llave el mismo nombre del archivo en este caso "url" y el valor sera el nombre dinamico que en este caso sera el modelo de la guitarra.
+#+begin_src js
+import { useRouter } from 'next/router';
+
+const Producto = () => {
+  const router = useRouter();
+  console.log(router.query.url);
+  return (
+    <div>url    </div>
+  );
+};
+
+export default Producto;
+
+#+end_src
