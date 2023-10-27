@@ -33,3 +33,19 @@ export default Tienda;
 Obtener el listado de paginas que se van a crear cuando se realiza el build (Static Site Generation)
 ** Client Side
 useEffect con fetch o SWR (Libreria para usar axios)
+
+* Modificaciones a next.config.js
+Para este proyecto se agregó el objeto de images al archivo de config, el cual tiene una propiedad para dar formato a las imagenes y la otra para poder usar imagenes de recursos externos
+#+begin_src json
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    domains: ['res.cloudinary.com']
+  }
+}
+
+module.exports = nextConfig
+#+end_src

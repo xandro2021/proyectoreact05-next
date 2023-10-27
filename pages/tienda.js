@@ -1,5 +1,6 @@
 import Layout from '../components/layout';
-import ListadoGuitarras from '../components/listado-guitarras';
+import Guitarra from '../components/guitarra';
+import styles from '../styles/grid.module.css';
 
 const Tienda = ({ guitarras }) => {
   return (
@@ -8,11 +9,18 @@ const Tienda = ({ guitarras }) => {
       description="Tienda virtual, venta de guitarras, instrumentos, GuitarraLA"
     >
       <main className="contenedor">
+
         <h1 className="heading">Nuestra Colección</h1>
 
-        <ListadoGuitarras
-          guitarras={guitarras}
-        />
+        <div className={styles.grid}>
+          {guitarras?.map(guitarra => (
+            <Guitarra
+              key={guitarra.id}
+              guitarra={guitarra.attributes}
+            />
+          ))}
+        </div>
+
       </main>
     </Layout>
   );
