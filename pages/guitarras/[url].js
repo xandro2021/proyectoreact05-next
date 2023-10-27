@@ -33,8 +33,6 @@ export async function getStaticPaths() {
     }
   }));
 
-  console.log(paths);
-
   return {
     paths,
     fallback: false // para enviar error 404 en caso de que el usuario visite una guitarra que no existe
